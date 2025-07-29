@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demonstration of HTML5 content elements and accessible forms">
+    <title>HTML5 Content & Form Mastery</title>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Content & Form Mastery</h1>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#content-elements">Content Elements</a></li>
+                <li><a href="#form-demo">Form Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="content-elements" aria-labelledby="content-heading">
+            <h2 id="content-heading">HTML5 Content Elements</h2>
+            
+            <article aria-labelledby="lists-heading">
+                <h3 id="lists-heading">Lists</h3>
+                
+                <h4>Ordered List (Steps)</h4>
+                <ol>
+                    <li>Prepare your ingredients</li>
+                    <li>Mix the dry components</li>
+                    <li>Add wet ingredients slowly</li>
+                    <li>Bake at 350°F for 45 minutes</li>
+                </ol>
+                
+                <h4>Unordered List (Features)</h4>
+                <ul>
+                    <li>Responsive design</li>
+                    <li>Accessibility compliant</li>
+                    <li>SEO optimized</li>
+                    <li>Cross-browser compatible</li>
+                </ul>
+                
+                <h4>Description List (Definitions)</h4>
+                <dl>
+                    <dt>HTML5</dt>
+                    <dd>The latest version of HyperText Markup Language</dd>
+                    
+                    <dt>ARIA</dt>
+                    <dd>Accessible Rich Internet Applications for enhanced accessibility</dd>
+                </dl>
+            </article>
+            
+            <article aria-labelledby="tables-heading">
+                <h3 id="tables-heading">Tables</h3>
+                <table>
+                    <caption>Monthly Budget Summary</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Budgeted</th>
+                            <th scope="col">Actual</th>
+                            <th scope="col">Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Housing</th>
+                            <td>$1,200</td>
+                            <td>$1,250</td>
+                            <td>-$50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Food</th>
+                            <td>$400</td>
+                            <td>$375</td>
+                            <td>+$25</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Transportation</th>
+                            <td>$300</td>
+                            <td>$280</td>
+                            <td>+$20</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>$1,900</td>
+                            <td>$1,905</td>
+                            <td>-$5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+            
+            <article aria-labelledby="media-heading">
+                <h3 id="media-heading">Media Elements</h3>
+                
+                <figure>
+                    <img src="https://via.placeholder.com/400x300" alt="Placeholder image demonstrating responsive design" width="400" height="300">
+                    <figcaption>Example of responsive image with proper alt text</figcaption>
+                </figure>
+                
+                <h4>Audio Example</h4>
+                <audio controls>
+                    <source src="audio-sample.mp3" type="audio/mpeg">
+                    <source src="audio-sample.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <h4>Video Example</h4>
+                <video controls width="600" poster="video-poster.jpg">
+                    <source src="video-sample.mp4" type="video/mp4">
+                    <source src="video-sample.webm" type="video/webm">
+                    <track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English">
+                    Your browser does not support the video element.
+                </video>
+            </article>
+        </section>
+
+        <section id="form-demo" aria-labelledby="form-heading">
+            <h2 id="form-heading">HTML5 Form Mastery</h2>
+            
+            <form id="registration" name="registration" action="/submit" method="post" novalidate>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div>
+                        <label for="fullname">Full Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="fullname" name="fullname" required 
+                               minlength="3" maxlength="100" 
+                               placeholder="John Doe" 
+                               aria-required="true">
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="user@example.com" 
+                               aria-required="true">
+                    </div>
+                    
+                    <div>
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" 
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                               placeholder="123-456-7890">
+                        <small>Format: 123-456-7890</small>
+                    </div>
+                    
+                    <div>
+                        <label for="birthdate">Date of Birth</label>
+                        <input type="date" id="birthdate" name="birthdate" 
+                               min="1900-01-01" max="2023-01-01">
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Account Details</legend>
+                    
+                    <div>
+                        <label for="username">Username <span aria-hidden="true">*</span></label>
+                        <input type="text" id="username" name="username" required 
+                               minlength="4" maxlength="20" 
+                               pattern="[a-zA-Z0-9_]+" 
+                               placeholder="john_doe123" 
+                               aria-required="true">
+                        <small>Letters, numbers and underscore only (4-20 chars)</small>
+                    </div>
+                    
+                    <div>
+                        <label for="password">Password <span aria-hidden="true">*</span></label>
+                        <input type="password" id="password" name="password" required 
+                               minlength="8" 
+                               aria-required="true">
+                        <small>Minimum 8 characters</small>
+                    </div>
+                    
+                    <div>
+                        <label for="confirm-password">Confirm Password <span aria-hidden="true">*</span></label>
+                        <input type="password" id="confirm-password" name="confirm-password" required 
+                               aria-required="true">
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Preferences</legend>
+                    
+                    <div>
+                        <label for="theme">Theme Preference</label>
+                        <select id="theme" name="theme">
+                            <option value="">-- Select a theme --</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="system">System Default</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <p>Notification Preferences</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>
+                                <input type="checkbox" id="notify-email" name="notify-email" checked>
+                                <label for="notify-email">Email Notifications</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="notify-sms" name="notify-sms">
+                                <label for="notify-sms">SMS Notifications</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="notify-push" name="notify-push">
+                                <label for="notify-push">Push Notifications</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <p>Membership Level</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>
+                                <input type="radio" id="basic" name="membership" value="basic" checked>
+                                <label for="basic">Basic (Free)</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="premium" name="membership" value="premium">
+                                <label for="premium">Premium ($9.99/month)</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="enterprise" name="membership" value="enterprise">
+                                <label for="enterprise">Enterprise ($29.99/month)</label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <label for="bio">Biography</label>
+                        <textarea id="bio" name="bio" rows="4" 
+                                  placeholder="Tell us about yourself..." 
+                                  maxlength="500"></textarea>
+                        <small>Maximum 500 characters</small>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Terms & Submission</legend>
+                    
+                    <div>
+                        <input type="checkbox" id="terms" name="terms" required 
+                               aria-required="true">
+                        <label for="terms">I agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a> <span aria-hidden="true">*</span></label>
+                    </div>
+                    
+                    <div>
+                        <button type="submit">Register</button>
+                        <button type="reset">Reset Form</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 HTML5 Content & Form Mastery</p>
+        <p><a href="/accessibility">Accessibility Statement</a></p>
+    </footer>
+</body>
+</html>
